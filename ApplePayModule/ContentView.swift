@@ -7,18 +7,23 @@
 //
 
 import SwiftUI
+import PassKit
 
 struct ContentView: View {
 
     private let paymentHandler = ApplePayHandler()
     @State private var showAlert = false
     @State private var alertTitle = ""
+    @State private var paymentItems = [PaymentItem(title: "Amount", amount: "100.00"),
+                                       .init(title: "Tax", amount: "20.00"),
+                                       .init(title: "Total", amount: "120.00")]
 
     var body: some View {
         Button(action: {
-            self.alertTitle = "Initiate Payment"
-            self.showAlert.toggle()
-
+            self.paymentHandler.startPayment(forItems: self.paymentItems.map(PKPaymentSummaryItem.init)) {
+                self.alertTitle = $0 ? "Payment successful!" : "Payment Failed!"
+                self.showAlert.toggle()
+            }
         }, label: {
             Text("PAY WITH  APPLE PAY")
                 .foregroundColor(.white)
