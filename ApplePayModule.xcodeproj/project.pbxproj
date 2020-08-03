@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF49230524CFF85B0039815E /* PaymentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF49230424CFF85B0039815E /* PaymentItem.swift */; };
+		EFE8025B24CAA8B700376DBB /* ApplePayHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE8025A24CAA8B700376DBB /* ApplePayHandler.swift */; };
 		EFF81A4D24C06229004D73E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF81A4C24C06229004D73E0 /* AppDelegate.swift */; };
 		EFF81A4F24C06229004D73E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF81A4E24C06229004D73E0 /* SceneDelegate.swift */; };
 		EFF81A5124C06229004D73E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF81A5024C06229004D73E0 /* ContentView.swift */; };
@@ -16,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF49230324CE97450039815E /* ApplePayModule.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ApplePayModule.entitlements; sourceTree = "<group>"; };
+		EF49230424CFF85B0039815E /* PaymentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentItem.swift; sourceTree = "<group>"; };
+		EFE8025A24CAA8B700376DBB /* ApplePayHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayHandler.swift; sourceTree = "<group>"; };
 		EFF81A4924C06229004D73E0 /* ApplePayModule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplePayModule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF81A4C24C06229004D73E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFF81A4E24C06229004D73E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,9 +61,12 @@
 		EFF81A4B24C06229004D73E0 /* ApplePayModule */ = {
 			isa = PBXGroup;
 			children = (
+				EF49230324CE97450039815E /* ApplePayModule.entitlements */,
 				EFF81A4C24C06229004D73E0 /* AppDelegate.swift */,
 				EFF81A4E24C06229004D73E0 /* SceneDelegate.swift */,
 				EFF81A5024C06229004D73E0 /* ContentView.swift */,
+				EFE8025A24CAA8B700376DBB /* ApplePayHandler.swift */,
+				EF49230424CFF85B0039815E /* PaymentItem.swift */,
 				EFF81A5224C0622F004D73E0 /* Assets.xcassets */,
 				EFF81A5724C0622F004D73E0 /* LaunchScreen.storyboard */,
 				EFF81A5A24C0622F004D73E0 /* Info.plist */,
@@ -103,7 +111,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1140;
-				ORGANIZATIONNAME = bibinjacobpulickal;
+				ORGANIZATIONNAME = "Bibin Jacob Pulickal";
 				TargetAttributes = {
 					EFF81A4824C06229004D73E0 = {
 						CreatedOnToolsVersion = 11.4.1;
@@ -149,6 +157,8 @@
 				EFF81A4D24C06229004D73E0 /* AppDelegate.swift in Sources */,
 				EFF81A4F24C06229004D73E0 /* SceneDelegate.swift in Sources */,
 				EFF81A5124C06229004D73E0 /* ContentView.swift in Sources */,
+				EFE8025B24CAA8B700376DBB /* ApplePayHandler.swift in Sources */,
+				EF49230524CFF85B0039815E /* PaymentItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,17 +294,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = ApplePayModule/ApplePayModule.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"ApplePayModule/Preview Content\"";
-				DEVELOPMENT_TEAM = 32BS4266DT;
+				DEVELOPMENT_TEAM = XU3XTNFKT8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ApplePayModule/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bibinjacobpulickal.ApplePayModule;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fingent.demoapplepay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Fingent_Demo_ApplePay_Development_24_July_2020;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -304,17 +317,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = ApplePayModule/ApplePayModule.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"ApplePayModule/Preview Content\"";
-				DEVELOPMENT_TEAM = 32BS4266DT;
+				DEVELOPMENT_TEAM = XU3XTNFKT8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ApplePayModule/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bibinjacobpulickal.ApplePayModule;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fingent.demoapplepay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Fingent_Demo_ApplePay_Development_24_July_2020;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
