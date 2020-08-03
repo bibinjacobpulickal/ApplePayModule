@@ -15,12 +15,12 @@ class ApplePayHandler: NSObject {
     var paymentStatus = PKPaymentAuthorizationStatus.failure
     var completionHandler: ApplePayCompletionHandler?
 
-    func startPayment(forItems items: [PKPaymentSummaryItem], completion: @escaping ApplePayCompletionHandler) {
+    func startPayment(forItems items: [PaymentItem], completion: @escaping ApplePayCompletionHandler) {
 
         paymentStatus     = .failure
         completionHandler = completion
 
-        let paymentRequest                 = generateRequest(forItems: items)
+        let paymentRequest                 = generateRequest(forItems: items.map(PKPaymentSummaryItem.init))
         let paymentAuthorizationController = PKPaymentAuthorizationController(paymentRequest: paymentRequest)
 
         paymentAuthorizationController.delegate = self

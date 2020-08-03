@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import PassKit
 
 struct ContentView: View {
 
@@ -20,7 +19,7 @@ struct ContentView: View {
 
     var body: some View {
         Button(action: {
-            self.paymentHandler.startPayment(forItems: self.paymentItems.map(PKPaymentSummaryItem.init)) {
+            self.paymentHandler.startPayment(forItems: self.paymentItems) {
                 self.alertTitle = $0 ? "Payment successful!" : "Payment Failed!"
                 self.showAlert.toggle()
             }
