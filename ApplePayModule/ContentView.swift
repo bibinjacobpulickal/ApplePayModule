@@ -3,14 +3,33 @@
 //  ApplePayModule
 //
 //  Created by Bibin Jacob Pulickal on 16/07/20.
-//  Copyright © 2020 bibinjacobpulickal. All rights reserved.
+//  Copyright © 2020 Bibin Jacob Pulickal. All rights reserved.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+
+    private let paymentHandler = ApplePayHandler()
+    @State private var showAlert = false
+    @State private var alertTitle = ""
+
     var body: some View {
-        Text("Hello, World!")
+        Button(action: {
+            self.alertTitle = "Initiate Payment"
+            self.showAlert.toggle()
+
+        }, label: {
+            Text("PAY WITH  APPLE PAY")
+                .foregroundColor(.white)
+        })
+            .frame(width: 300, height: 20, alignment: .center)
+            .padding()
+            .background(Color.black)
+            .cornerRadius(8)
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text(alertTitle))
+        }
     }
 }
 
